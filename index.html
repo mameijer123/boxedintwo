@@ -5,17 +5,11 @@
   </head>
   <body>
     <p>This is an example HTML forms configuration page.</p>
-  <input id='background_color_input' type='text' value='#000000'>
+  <input id='color' type='text' value='#000000'>
     Background Color
   </input>
-  <input id='foreground_color_input' type='text' value='#000000'>
-   Foreground Color
-  </input>
-  <input id='second_tick_checkbox' type='checkbox'>
+  <input id='twentyfour' type='checkbox'>
     Enable Second Ticks
-  </input>
-  <input id='animations_checkbox' type='checkbox'>
-    Show Animations
   </input>
   <input id='submit_button' type='button' value='Save'>
 
@@ -26,17 +20,13 @@
   // Add a 'click' listener
   submitButton.addEventListener('click', function() {
     // Get the config data from the UI elements
-    var backgroundColor = document.getElementById('background_color_input');
-    var foregroundColor = document.getElementById('foreground_color_input');
-    var secondTickCheckbox = document.getElementById('second_tick_checkbox');
-    var animationsCheckbox = document.getElementById('animations_checkbox');
+    var color = document.getElementById('color');
+    var twentyfour = document.getElementById('twentyfour');
 
     // Make a data object to be sent, coercing value types to integers
     var options = {
-      'background_color': parseInt(backgroundColor.value, 16),
-      'foreground_color': parseInt(foregroundColor.value, 16),
-      'second_ticks': secondTickCheckbox.checked == 'true' ? 1 : 0,
-      'animations': animationsCheckbox.checked == 'true' ? 1 : 0
+      'color': parseInt(color.value, 16),
+      'twentyfour': secondTickCheckbox.checked == 'true' ? 1 : 0
     };
 
     // Determine the correct return URL (emulator vs real watch)
