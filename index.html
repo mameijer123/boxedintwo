@@ -1,16 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Example Configuration</title>
+    <title>BoxedIn Settings</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.css" />
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
   </head>
   <body>
-    <p>This is an example HTML forms configuration page.</p>
-    <input id='background_color_input' type='text' value='#000000'>
-  Background Color
-</input>
-<input id='foreground_color_input' type='text' value='#000000'>
-  Foreground Color
-</input>
+    <div data-role="page" id="main">
+      <div data-role="header" class="jqm-header">
+        <h1>BoxedIn Settings</h1>
+      </div>
+
+      <div data-role="content">
+
+<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="false">
+    <div data-role="collapsible">
+        <h3>Color</h3>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Font Color</legend>
+        <input name="key0" id="key0-0" data-type="int" value="1" checked="checked" type="radio">
+        <label for="key0-0">White</label>
+        <input name="key0" id="key0-1" data-type="String" value="0xFF0000" type="radio">
+        <label for="key0-1">Red</label>
+        <input name="key0" id="key0-2" data-type="String" value="0x0000FF" type="radio">
+        <label for="key0-2">Blue</label>
+        <input name="key0" id="key0-3" data-type="int" value="4" type="radio">
+        <label for="key0-3">Green</label>
+        <input name="key0" id="key0-4" data-type="int" value="5" type="radio">
+        <label for="key0-4">Yellow</label>
+        <input name="key0" id="key0-5" data-type="int" value="6" type="radio">
+        <label for="key0-5">Purple</label>
+</fieldset>
+
+
+
+</div>
+
+<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="false">
+    <div data-role="collapsible">
+        <h3>Time Format</h3>
+        
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Time Formate</legend>
+        <input name="key1" id="key1-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key1-0">24 Hour</label>
+        <input name="key1" id="key1-1" data-type="int" value="1" type="radio">
+        <label for="key1-1">12 Hour</label>
+</fieldset>
+        
+</div>
+
 <input id='submit_button' type='button' value='Save'>
 
 <script>
@@ -23,14 +66,14 @@
     console.log('Got here');
     // Get the config data from the UI elements
     var backgroundColor = document.getElementById('background_color_input');
-    var foregroundColor = document.getElementById('foreground_color_input');
-    //var secondTickCheckbox = document.getElementById('second_tick_checkbox');
+    //var foregroundColor = document.getElementById('foreground_color_input');
+    var twentyfour = document.getElementById('second_tick_checkbox');
 
     // Make a data object to be sent, coercing value types to integers
     var options = {
       'background_color': parseInt(backgroundColor.value, 16),
-      'foreground_color': parseInt(foregroundColor.value, 16),
-      //'second_ticks': secondTickCheckbox.checked == 'true' ? 1 : 0,
+      //'foreground_color': parseInt(foregroundColor.value, 16),
+      'second_ticks': secondTickCheckbox.checked == 'true' ? 1 : 0,
     };
 
     // Determine the correct return URL (emulator vs real watch)
