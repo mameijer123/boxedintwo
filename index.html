@@ -22,17 +22,17 @@
 
 <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
     <legend>Font Color</legend>
-        <input name="key0" id="key0-0" data-type="int" value="1" checked="checked" type="radio">
+        <input name="key0" id="key0-0" data-type="String" value="0xFFFFFF" checked="checked" type="radio">
         <label for="key0-0">White</label>
-        <input name="key0" id="key0-1" data-type="String" value="0xFF0000" type="radio">
+        <input name="key0" id="key0-1" data-type="String" value="0xFF0000" checked="checked" type="radio">
         <label for="key0-1">Red</label>
-        <input name="key0" id="key0-2" data-type="String" value="0x0000FF" type="radio">
+        <input name="key0" id="key0-2" data-type="String" value="0x0000FF" checked="checked" type="radio">
         <label for="key0-2">Blue</label>
-        <input name="key0" id="key0-3" data-type="int" value="4" type="radio">
+        <input name="key0" id="key0-3" data-type="String" value="0x00FF00" checked="checked" type="radio">
         <label for="key0-3">Green</label>
-        <input name="key0" id="key0-4" data-type="int" value="5" type="radio">
+        <input name="key0" id="key0-4" data-type="String" value="0xFFFF00" checked="checked" type="radio">
         <label for="key0-4">Yellow</label>
-        <input name="key0" id="key0-5" data-type="int" value="6" type="radio">
+        <input name="key0" id="key0-5" data-type="String" value="0xAA00AA" checked="checked" type="radio">
         <label for="key0-5">Purple</label>
 </fieldset>
 
@@ -65,9 +65,9 @@
     
     console.log('Got here');
     // Get the config data from the UI elements
-    var backgroundColor = document.getElementById('background_color_input');
+    var backgroundColor = document.getElementById('key0');
     //var foregroundColor = document.getElementById('foreground_color_input');
-    var twentyfour = document.getElementById('second_tick_checkbox');
+    var twentyfour = document.getElementById('key1');
 
     // Make a data object to be sent, coercing value types to integers
     var options = {
