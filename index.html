@@ -43,6 +43,30 @@
 </fieldset>
 
 <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Line Color</legend>
+    <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="false">
+    <div data-role="collapsible">
+        <h4>Color</h4>
+        <input name="key6" id="key6-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key6-0">White</label>
+        <input name="key6" id="key6-1" data-type="int" value="1" checked="checked" type="radio">
+        <label for="key6-1">Black</label>
+        <input name="key6" id="key6-2" data-type="int" value="2" checked="checked" type="radio">
+        <label for="key6-2">Blue</label>
+        <input name="key6" id="key6-3" data-type="int" value="3" checked="checked" type="radio">
+        <label for="key6-3">Green</label>
+        <input name="key6" id="key6-4" data-type="int" value="4" checked="checked" type="radio">
+        <label for="key6-4">Red</label>
+        <input name="key6" id="key6-5" data-type="int" value="5" checked="checked" type="radio">
+        <label for="key6-5">Orange</label>
+        <input name="key6" id="key6-6" data-type="int" value="6" checked="checked" type="radio">
+        <label for="key6-6">Yellow</label>
+        <input name="key6" id="key6-7" data-type="int" value="7" checked="checked" type="radio">
+        <label for="key6-7">Electric Blue</label>
+    </div>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
     <legend>Time Color</legend>
     <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="false">
     <div data-role="collapsible">
@@ -65,6 +89,8 @@
         <label for="key0-7">Magenta</label>
         <input name="key0" id="key0-8" data-type="text" value="0x55FFFF" checked="checked" type="radio">
         <label for="key0-8">Electric Blue</label>
+        <input name="key0" id="key0-9" data-type="text" value="0x000000" checked="checked" type="radio">
+        <label for="key0-9">Black</label>
     
     </div>
         
@@ -94,6 +120,8 @@
         <label for="key1-7">Magenta</label>
         <input name="key1" id="key1-8" data-type="text" value="0x55FFFF" checked="checked" type="radio">
         <label for="key1-8">Electric Blue</label>
+        <input name="key1" id="key1-9" data-type="text" value="0x000000" checked="checked" type="radio">
+        <label for="key1-9">Black</label>
     </div>
 </fieldset>
 
@@ -120,6 +148,8 @@
         <label for="key2-7">Magenta</label>
         <input name="key2" id="key2-8" data-type="text" value="0x55FFFF" checked="checked" type="radio">
         <label for="key2-8">Electric Blue</label>
+        <input name="key2" id="key2-9" data-type="text" value="0x000000" checked="checked" type="radio">
+        <label for="key2-9">Black</label>
     </div>
 </fieldset>
 
@@ -146,6 +176,8 @@
         <label for="key3-7">Magenta</label>
         <input name="key3" id="key3-8" data-type="text" value="0x55FFFF" checked="checked" type="radio">
         <label for="key3-8">Electric Blue</label>
+        <input name="key3" id="key3-9" data-type="text" value="0x000000" checked="checked" type="radio">
+        <label for="key3-9">Black</label>
     </div>
 </fieldset>
 
@@ -172,6 +204,8 @@
         <label for="key4-7">Magenta</label>
         <input name="key4" id="key4-8" data-type="text" value="0x55FFFF" checked="checked" type="radio">
         <label for="key4-8">Electric Blue</label>
+        <input name="key4" id="key4-9" data-type="text" value="0x000000" checked="checked" type="radio">
+        <label for="key4-9">Black</label>
     </div>
 </fieldset>
 
@@ -197,6 +231,7 @@
     var dayOfMonthColor;
     var monthColor;
     var tileColor;
+    var lineColor;
     //var twentyfour = document.getElementsByName('key1');
     if (document.getElementById('key0-0').checked) {
       timeColor = document.getElementById('key0-0');
@@ -313,6 +348,22 @@
     } else if (document.getElementById('key5-6').checked) {
       tileColor = document.getElementById('key5-6');
     }
+    
+    if (document.getElementById('key6-0').checked) {
+      lineColor = document.getElementById('key6-0');
+    } else if (document.getElementById('key6-1').checked) {
+      lineColor = document.getElementById('key6-1');
+    } else if (document.getElementById('key6-2').checked) {
+      lineColor = document.getElementById('key6-2');
+    } else if (document.getElementById('key6-3').checked) {
+      lineColor = document.getElementById('key6-3');
+    } else if (document.getElementById('key6-4').checked) {
+      lineColor = document.getElementById('key6-4');
+    } else if (document.getElementById('key6-5').checked) {
+      lineColor = document.getElementById('key6-5');
+    } else if (document.getElementById('key6-6').checked) {
+      lineColor = document.getElementById('key6-6');
+    }
     // Make a data object to be sent, coercing value types to integers
     var options = {
       'time_color': parseInt(timeColor.value, 16),
@@ -321,6 +372,7 @@
       'day_of_month_color': parseInt(dayOfMonthColor.value, 16),
       'month_color': parseInt(monthColor.value, 16),
       'tile_color': parseInt(tileColor.value, 16),
+      'line_color': parseInt(lineColor.value, 16),
       //'tile_color': Number(tileColor.val());
       //'foreground_color': parseInt(foregroundColor.value, 16),
       //'twentyfour': twentyfour.checked == 'true' ? 1 : 0,
