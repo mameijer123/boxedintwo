@@ -235,6 +235,7 @@
     //var twentyfour = document.getElementsByName('key1');
     if (document.getElementById('key0-0').checked) {
       timeColor = document.getElementById('key0-0');
+      localStorage.setItem("time", 0);
     } else if (document.getElementById('key0-1').checked) {
       timeColor = document.getElementById('key0-1');
     } else if (document.getElementById('key0-2').checked) {
@@ -403,6 +404,11 @@
     //localStorage.dayOfWeekColor = options.dayOfWeekColor;
     //localStorage.dayOfMonthColor = options.dayOfMonthColor;
     //localStorage.monthColor = options.monthColor;
+    
+    if (localStorage.getItem("tile") == 0) {
+      radiobtn = document.getElementById('key0-0');
+      radiobtn.checked = true;
+    }
 
     // Determine the correct return URL (emulator vs real watch)
     function getQueryParam(variable, defaultValue) {
